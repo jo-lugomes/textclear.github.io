@@ -1,6 +1,13 @@
 const express = require('express');
 const path = require('path');
 
+
+var Parse = require('parse/node');
+
+// Inicialize o Parse com suas credenciais
+Parse.initialize("Zu4KHqyxVhVxJ5KAkORkkC2MhKD5nyliQvWAsIfV", "1uV1NtEU6O7GGwHy8h23S8bL4JwXzUHLD53b0RiO");  // Substitua pelas suas credenciais
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
 const app = express();
 const PORT = process.env.PORT || 5500;
 
@@ -132,7 +139,7 @@ app.post('/enviar2-json', async (req, res) => {
       history: [
         {
           role: "user",
-          parts: [{ text: "Sua tarefa é resumir textos em português, se o usuário mandar algo em outra lingua, mande um mensagem de erro. Se o usuário mandar qualquer coisa além de uma frase ou texto em português, de uma mensagem de erro."}],
+          parts: [{ text: "Sua tarefa é resumir textos em português se for realizar uma lista utilize numeros ao inves de asteristicos, se o usuário mandar algo em outra lingua, mande um mensagem de erro. Se o usuário mandar qualquer coisa além de uma frase ou texto em português, de uma mensagem de erro."}],
         },
         {
           role: "model",
@@ -159,7 +166,6 @@ app.post('/enviar2-json', async (req, res) => {
   }
 
 });
-
 
 // Iniciando o servidor na porta especificada
 app.listen(PORT, () => {

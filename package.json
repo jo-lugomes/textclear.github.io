@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "@google/generative-ai": "^0.8.0",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2",
+    "parse": "^5.1.0",
+    "parse-dashboard": "^5.4.0",
+    "parse-server": "^7.0.0"
   }
 }

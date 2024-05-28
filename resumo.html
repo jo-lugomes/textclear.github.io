@@ -122,6 +122,18 @@
         modal.style.display = "none";
       }
     }
+
+    async function sendJSON(value) {
+  const response = await fetch('https://backend.back4app.com/apps/bb90b96b-8043-4b87-af91-edacc9a7bae7/browser/_User', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ valor: value })
+  });
+  const data = await response.json();
+  // Use the 'data' object as needed in your frontend code
+}
   </script>
 </body>
 </html>
